@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    margin:0;
+    padding:10px;
+    background:linear-gradient(to top left,rgba(0, 0, 0, 0.451),white);
+    height: 100vh;
+}
+.Intro{
+    font-family: "Smooch Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    text-align: center;
+    font-size: 5rem;
+    padding:1rem;
+
+
+}
+#form1{
+    font-family: 'Courier New', Courier, monospace;
+    text-align:center;
+    font-size:2rem;
+
+}
+.enternumber{
+    text-align: center;
+
+}
+#entertext{
+    width: 70%;
+    height: 2rem;
+    border-radius:10px;
+    background: rgba(128, 128, 128, 0.538);
+    border:none;
+    
+}
+#clickme{
+    border-radius:10px;
+    height: 5vh;
+    padding:10px;
+
+}
+#Answer{
+    text-align: center;
+    font-size:25px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap:5vw;
+    
+    padding: 10px;
+}
+
+#Answer .ansheading{
+    color: red;
+    padding:10px;
+    font-family: "Smooch Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    text-align: center;
+    font-size: 2rem;
+    
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+
+}
+#Answer .content{
+    text-align: left;
+    
+    flex-grow: 1;
+    font-family: 'Courier New', Courier, monospace;
+    padding:10px;
+}
+
+
+@media (max-width:768px){
+    .Intro{
+        font-family: "Smooch Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        text-align: center;
+        font-size: 5rem;
+        padding:1rem;
+    }
+    #form1{
+        font-family: 'Courier New', Courier, monospace;
+        text-align:center;
+        font-size:1.5rem;
+    }
+    #entertext{
+        width: 70%;
+        height: 2rem;
+        border-radius: 10px;
+        background: rgba(128, 128, 128, 0.538);
+        border:none;
+    }
+    #clickme{
+        border-radius: 10px;
+        height: 5vh;
+        
+    }
+    #Answer{
+        flex-direction: column;
+        gap:0vh;
+
+    }
+    #Answer .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #Answer .ansheading{
+        justify-content: center;
+    }
+}
