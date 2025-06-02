@@ -1,2 +1,2 @@
-#A Currency Convertor that integrates API knowledge
+# A Currency Convertor that integrates API knowledge
 
