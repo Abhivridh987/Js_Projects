@@ -165,7 +165,7 @@ thirdbutton.addEventListener("click",()=>{
     {
       alert("Please enter a valid password")
     }
-    else if(emailbox == "abhivridh2@gmail.com" && passwordbox == "Abhivridh@123"){
+    else if(emailbox == "abhivridh2@gmail.com" && passwordbox == "Abhivridh"){
           let slides = document.querySelector(".slides");
           slides.style.transform="translateX(-75%)";
           slides.style.transitionDuration="0s";
