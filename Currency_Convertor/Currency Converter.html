@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Convertor</title>
+    <link rel="stylesheet" href="Currency.css" type="text/css">
+    <script src="https://kit.fontawesome.com/0e66e07bd2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="slides">
+        <div class=" slide coverpage">
+            <div class="text">Money knows no borders,<br>neither should your conversions.</div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4">$</div>
+            <div class="button" id="nexttosecondpage">Next</div>
+        </div>
+        <div class="slide features">
+            <div class="projectprovides">
+                Our Project Provides You With
+            </div>
+            <div class="featureslist">
+                <div>
+                    <h1>Instant Conversions</h1>
+                    <p>Get currency values in a flash—type, tap, and transform with zero delays.</p>
+                </div>
+                <div>
+                    <h1>Global Reach</h1>
+                    <p>From USD to INR to Yen and beyond—convert between 150+ currencies effortlessly.</p>
+                </div>
+                <div>
+                    <h1>Live Exchange Rates</h1>
+                    <p>Always accurate, always updated—powered by real-time market data.</p>
+                </div>
+                <div>
+                    <h1>Sleek & Simple UI</h1>
+                    <p>Minimalist design meets maximum ease—because converting shouldn't be confusing.</p>
+                </div>
+            </div>
+            <div class="nexttothirdpage">
+                <button class="nexttothirdpage">Next</button>
+            </div>
+        </div>
+        <div class="slide welcomepage">
+            <div class="loginbox">
+                <div class="emailbox">
+                    <div class="description">Email</div>
+                    <div class="textarea"><input type="text" id="emailbox" placeholder="Email Address"></div>
+                </div>
+                <div class="passwordbox">
+                    <div class="description">Password</div>
+                    <div class="textarea"><input type="password" id="passwordbox" placeholder="Password"><i class="fa-solid fa-eye"></i></div>
+                </div>
+                <div class="loginbutton">
+                    <button class="nextbuttontoconvertor">Login</button>
+                </div>
+            </div>
+        </div>
+        <div class="slide converter" id="function">
+            <div class="currency-container">
+                <div class="heading">
+                    Currency Convertor
+                </div>
+                <div class="currencyvalues">
+                    <div class="from">
+                        <span>From</span>
+                        <select id="from">
+
+                        </select>
+                    </div>
+                    <div class="to">
+                        <span>To</span>
+                        <select id="to">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="predata">
+                    <div class="denominations">
+                        <div class="text" id="currencycode">
+                            Enter Denominations
+                        </div>
+                        <div class="number">
+                            <input type="number" id="enterdenominations"> 
+                        </div>
+                        
+                    </div>
+                    <div class="date">
+                        <div class="text" id="date">
+                            Date
+                        </div>
+                        <div class="datebox">
+                            <select id="otherdate">
+                                <option selected>Current Date</option>
+                                <option>Other Date</option>
+                                
+                            </select>
+                            <div class="otherdate"><input type="date" id="accesscalendar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="convert">
+                    <div class="result" id="conversionresult"></div>
+                    <div class="buttons"><button id="conversionbutton">Convert</button><button id="clearbutton">Clear</button></div>
+                    
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+    <script src="Currency.js"></script>
+</body>
+</html>
