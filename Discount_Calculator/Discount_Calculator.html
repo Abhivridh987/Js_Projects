@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Importing Google Fonts */    
+        @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Dancing+Script:wght@400..700&family=Indie+Flower&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Rocker&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playwrite+HU:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Smooch+Sans:wght@100..900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 1.2rem;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:linear-gradient(to top left, aqua,violet,purple);
+            width:100vw;
+            min-height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .heading {
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .heading div {
+            width: 33%;
+            text-align: center;
+            font-weight: normal;
+            font-size: 1.2rem;
+            
+        }
+        .calculator {
+            width: 300px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+            
+        }
+        .el{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            border-radius:10px;
+            padding: 10px;
+            height: 5vh;
+            
+        }
+        .el div{
+            
+            width: 33%;
+            height: 100%;
+        }
+        .el div input{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 5px;
+            
+        }
+        .el .discount{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            
+        }
+        .buttons button{
+            padding:10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <div>MRP</div>
+            <div>Price</div>
+            <div>Discount</div>
+        </div>
+        <div class="calculator">
+            <div class="el">
+                <div class="mrp"><input type=number></div>
+                <div class="price"><input type=number></div>
+                <div class="discount"></div>
+            </div>
+        </div>    
+        <div class="buttons">
+            <button id="next">Next</button>
+            <button id="calculate">Calculate</button>
+            <button id="reset">Reset</button>
+        </div>
+        
+    </div>
+    <script>
+        //Next Button Functionality
+        document.querySelector('#next').addEventListener('click', function(){
+            let el = document.createElement('div');
+            el.classList.add('el');
+            el.innerHTML = `
+                <div class="mrp"><input type=number></div>
+                <div class="price"><input type=number></div>
+                <div class="discount"></div>
+            `;
+            document.querySelector('.calculator').appendChild(el);
+        })
+
+        // Reset function
+        document.querySelector('#reset').addEventListener('click', function(){
+            document.querySelector('.calculator').innerHTML = '';
+            let el = document.createElement('div');
+            el.classList.add('el');
+            el.innerHTML = `
+                <div class="mrp"><input type=number></div>
+                <div class="price"><input type=number></div>
+                <div class="discount"></div>
+            `;
+            document.querySelector('.calculator').appendChild(el);
+        })
+
+        // Calculate Discount
+        document.querySelector('#calculate').addEventListener('click', function(){
+            let els = document.querySelectorAll('.el');
+            els.forEach(el => {
+                let mrp = el.querySelector('.mrp input').value;
+                let price = el.querySelector('.price input').value;
+                if(mrp && price){
+                    let discount = ((mrp - price) / mrp) * 100;
+                    el.querySelector('.discount').innerText = `${discount.toFixed(2)}%`;
+                } else {
+                    el.querySelector('.discount').innerHTML = `<text style="font-size:12px">Please enter valid values</text>`;
+                }
+            });
+        })
+    </script>    
+</body>
+</html>
